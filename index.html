@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - SmartCity</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes drawCheck {
+            0% { stroke-dashoffset: 30; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-out;
+            overflow: hidden; /* For transitions */
+        }
+        .step {
+            display: none; /* Hidden by default */
+        }
+        .step.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        h2 {
+            color: #3D5AFE; /* SmartCity primary color */
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #555;
+            font-size: 1em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        input, textarea {
+            width: calc(100% - 26px);
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3D5AFE;
+            box-shadow: 0 0 0 3px rgba(61, 90, 254, 0.2);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .btn-primary {
+             background-color: #3D5AFE;
+        }
+        .btn-primary:hover {
+            background-color: #314de4;
+        }
+        .btn-danger {
+            background-color: #ff4d4d;
+        }
+        .btn-danger:hover {
+            background-color: #e43f3f;
+        }
+        .info-box-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .info-box {
+            flex: 1;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .info-box ul {
+            padding-left: 20px;
+            margin: 10px 0 0;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .info-box svg {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 3;
+            stroke: #4CAF50;
+            stroke-miterlimit: 10;
+            box-shadow: inset 0px 0px 0px #4CAF50;
+            margin: 20px auto;
+        }
+        .success-checkmark__circle {
+             stroke-dasharray: 166;
+             stroke-dashoffset: 166;
+             stroke-width: 3;
+             stroke-miterlimit: 10;
+             stroke: #4CAF50;
+             fill: none;
+             animation: fadeIn 0.3s ease-in-out;
+        }
+         .success-checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 30;
+            stroke-dashoffset: 30;
+            animation: drawCheck 0.4s 0.2s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div id="step1" class="step active">
+            <h2>Before You Go...</h2>
+            <p>Deleting your account is permanent. Please review what will happen to your data.</p>
+            <div class="info-box-container">
+                <div class="info-box">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4d4d" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>
+                        What We Delete
+                    </h3>
+                    <ul>
+                        <li>Your Name</li>
+                        <li>Email Address</li>
+                        <li>Profile Information</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3D5AFE" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
+                        What We Keep
+                    </h3>
+                    <ul>
+                        <li>Complaint data</li>
+                        <li>(Anonymized)</li>
+                        <li>No personal link</li>
+                    </ul>
+                </div>
+            </div>
+            <button id="proceedButton" class="btn-primary">I Understand, Proceed to Deletion</button>
+        </div>
+
+        <div id="step2" class="step">
+            <h2>Confirm Your Identity</h2>
+            <p>To finalize, please enter your details. This is the last step and cannot be undone.</p>
+            <form id="deleteForm">
+                <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+                <input type="email" name="email" id="email" placeholder="Enter your Google account email" required>
+                <textarea name="reason" id="reason" placeholder="Reason for leaving (Optional)"></textarea>
+                <button type="submit" id="submitButton" class="btn-danger">Delete My Account Permanently</button>
+            </form>
+        </div>
+
+        <div id="successMessage" class="step">
+             <svg class="success-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="success-checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="success-checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <h2>Request Sent</h2>
+            <p>Your account deletion request has been submitted. We will process it shortly and send a confirmation to your email.</p>
+        </div>
+
+    </div>
+
+    <script>
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const successMessage = document.getElementById('successMessage');
+        const proceedButton = document.getElementById('proceedButton');
+        const form = document.getElementById('deleteForm');
+
+        proceedButton.addEventListener('click', () => {
+            step1.classList.remove('active');
+            step2.classList.add('active');
+        });
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the form from submitting
+
+            // This is a prototype, so we just show the success message.
+            step2.classList.remove('active');
+            successMessage.classList.add('active');
+        });
+    </script>
+</body>
+</html>
