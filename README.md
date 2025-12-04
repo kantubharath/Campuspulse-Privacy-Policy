@@ -1,1 +1,1 @@
-# Campuspulse-Privacy-Policy
+# Campuspulse-Delete-Policy
